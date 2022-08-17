@@ -66,3 +66,95 @@ let mezclarVerduras = (contenedor, algo) => {
 };
 
 hacerEnsalada('tupperware', verduras, 'chucky', lavar, cortarVerduras, mezclarVerduras);
+
+function mandarMensajeAlaEx(hacerAlgoRespuesta) {
+    //mandar mensaje a nuestra ex
+    let callback = () => {
+        let respuesta = 'Yo tambien te extraño';
+        if(respuesta !== undefined) {
+            hacerAlgoRespuesta(respuesta);
+        }
+    };
+
+    setTimeout(callback, 0);
+    console.log('Esto va despues o antes');
+}
+
+function hacerAlgoRespuesta(respuestaDeMiEx) {
+    console.log(`Bloqueada ALV ${respuestaDeMiEx}`);
+}
+
+mandarMensajeAlaEx(hacerAlgoRespuesta);
+
+
+let personas = [{
+    nombre: 'Aldo',
+    edad: 30
+}, {
+    nombre: 'Juan',
+    edad: 20
+}];
+
+let carro = {
+    puertas: 4
+};
+carro.puertas = 10;
+
+let string = 'aldo';
+string[0] = 'b';
+
+let obj = new Object();
+let str = new String();
+
+
+function parsearPersonas(personas) {
+    let personasTransformadas = [];
+    let count = 0;
+    for(let persona of personas) {
+        personasTransformadas[count] = {nombre: persona.nombre, sexo: 'masculino'};
+        count++;
+    }
+    return personasTransformadas;
+}
+
+console.log(parsearPersonas(personas));
+
+
+
+function recibirCallback(fun) {
+    fun();
+}
+
+recibirCallback(fun)
+
+function retornaOtraFuncion() {
+    let referencia = () => {
+        console.log('HOLA CHAVOS');
+        return () => {}
+    };
+
+    return referencia;
+}
+
+let resultado = referencia();
+
+
+function entrarABBVA(acciones) {
+    acciones();
+}
+
+let acciones = (user, password, autorizacion) => {
+    let resultado = hacerLogin(user, password);
+    let callback = (autorizado) => {
+        if(autorizado) {
+            console.log('Tu saldo es: 0.00 :(')
+        }
+    }
+
+    if(resultado) {
+        autorizacion(callback);
+    }
+
+};
+
+let callback = () => {};
