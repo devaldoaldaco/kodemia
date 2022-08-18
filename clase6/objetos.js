@@ -4,12 +4,12 @@ let carro = {
     puertas: 4,
     color: 'gris',
     electrico: false,
-    acelerar: function() {
+    acelerar: () => {
         console.log(this.color);
     }
 };
-let {puertas, color, electrico} = carro; //sugar syntax
-console.log(puertas, color, electrico);
+
+carro.acelerar();
 
 // funcion constructora
 function Carro(puertas, color, electrico = true, acelerar) {
