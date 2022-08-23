@@ -21,6 +21,13 @@ const automovil = {
     }
 }
 
+const auto1 = automovil;
+const auto2 = automovil;
+const auto3 = automovil;
+const auto4 = automovil;
+
+auto1.puertas = 10;
+
 const auto = new Object();
 auto.puertas = 4;
 auto.electrico = false;
@@ -37,6 +44,7 @@ function Carro(puertas) {
 }
 
 const bmw = new Carro();
+console.log(bmw)
 bmw.version = 'Lujo';
 
 const casa = {
@@ -66,7 +74,11 @@ console.log(string);
 const esVerdad = new Boolean(true);
 
 console.log(esVerdad);
-
+function PersonaJugadorPS5() {
+    this.entusiasmo = entusiasmo;
+    this.gordo = gordo;
+    this.lentes = lentes;
+}
 class PersonaJugadorPS5 { // ES6 sugar syntax
     constructor(entusiasmo, gordo, lentes) {
         this.entusiasmo = entusiasmo;
