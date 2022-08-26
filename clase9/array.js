@@ -375,7 +375,6 @@ Array.prototype.map = function(callback) {
 const pokemones = ['picachu', 'squirtle', 'volvasaur'];
 
 const evolucionarPokemones = pokemon => {
-
     if(pokemon === 'picachu') {
         return 'raychu'
     } else if(pokemon === 'squirtle') {
@@ -383,17 +382,76 @@ const evolucionarPokemones = pokemon => {
     } else {
         return 'ibasaur'
     }
-    // const evoluciones = {
-    //     picachu: 'raychu',
-    //     squirtle: 'warturtle',
-    //     volvasaur: 'ibasaur'
-    // };
+};
 
-    // return evoluciones[pokemon];
+const transformarUsuario = usuario => {
+    return {
+        edad: usuario.edad,
+        nombre: usuario.nombre
+        peso: usuario.peso
+    }
 };
 
 const pokemonesEvolucionados = pokemones.map(evolucionarPokemones);
 
+console.log(pokemones);
 console.log(pokemonesEvolucionados);
 
 Array.prototype.reduce
+
+
+function areaDelCuadrado(valor1, valor2) {
+    let area = valor1 * valor2;
+    return area;
+}
+let areaCuadrado = areaDelCuadrado(10, 20); // el valor de la expresion 'areaDelCuadrado(10, 20)' ====> 200 
+console.log(areaDelCuadrado(10, 20));
+
+console.log(2 == '2');
+
+const autos = [
+    {marca: 'BMW',  modelo: 'Serie 3', year: 2012, precio: 30000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Audi', modelo: 'A4',  year: 2018, precio: 40000, puertas: 4, color: 'Negro', transmision: 'automatico'},
+    {marca: 'Ford', modelo: 'Mustang',  year: 2015, precio: 20000, puertas: 2, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Audi', modelo: 'A6',  year: 2010, precio: 35000, puertas: 4, color: 'Negro', transmision: 'automatico'},
+    {marca: 'BMW', modelo: 'Serie 5',  year: 2016, precio: 70000, puertas: 4, color: 'Rojo', transmision: 'automatico'},
+    {marca: 'Mercedes Benz', modelo: 'Clase C',  year: 2015, precio: 25000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Chevrolet', modelo: 'Camaro',  year: 2018, precio: 60000, puertas: 2, color: 'Rojo', transmision: 'manual'},
+    {marca: 'Ford', modelo: 'Mustang',  year: 2019, precio: 80000, puertas: 2, color: 'Rojo', transmision: 'manual'},
+    {marca: 'Dodge', modelo: 'Challenger',  year: 2017, precio: 40000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Audi', modelo: 'A3',  year: 2017, precio: 55000, puertas: 2, color: 'Negro', transmision: 'manual'},
+    {marca: 'Dodge', modelo: 'Challenger',  year: 2012, precio: 25000, puertas: 2, color: 'Rojo', transmision: 'manual'},
+    {marca: 'Mercedes Benz', modelo: 'Clase C',  year: 2018, precio: 45000, puertas: 4, color: 'Azul', transmision: 'automatico'},
+    {marca: 'BMW', modelo: 'Serie 5',  year: 2019, precio: 90000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Ford', modelo: 'Mustang',  year: 2017, precio: 60000, puertas: 2, color: 'Negro', transmision: 'manual'},
+    {marca: 'Dodge', modelo: 'Challenger',  year: 2015, precio: 35000, puertas: 2, color: 'Azul', transmision: 'automatico'},
+    {marca: 'BMW', modelo: 'Serie 3',  year: 2018, precio: 50000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'BMW', modelo: 'Serie 5',  year: 2017, precio: 80000, puertas: 4, color: 'Negro', transmision: 'automatico'},
+    {marca: 'Mercedes Benz', modelo: 'Clase C',  year: 2018, precio: 40000, puertas: 4, color: 'Blanco', transmision: 'automatico'},
+    {marca: 'Audi', modelo: 'A4',  year: 2016, precio: 30000, puertas: 4, color: 'Azul', transmision: 'automatico'}
+];
+const mercedez = autos.find(function (auto) {
+    // auto = {marca: 'Audi', modelo: 'A4',  year: 2016, precio: 30000, puertas: 4, color: 'Azul', transmision: 'automatico'}
+    if(auto.marca === 'Mercedes Benz' && auto.year === 2018 && auto.modelo === 'Clase C') {
+        return auto;
+    }
+    
+});
+
+autos[autos.length - 2];
+
+console.log(mercedez);
+
+const frutas = ['pera', 'manzana', 'banana podrida', 'pera podrida'];
+
+let frutasLimpias = frutas.filter((fruta) => {
+     // expresion de js true or false
+     // iteracion 1 fruta = 'pera' fruta.includes('podrida') ===> false 
+    if(fruta.includes('podrida')) {
+        return false;
+    }
+    return true;
+});
+
+console.log(`Ahi esta la canasta jefa: ${frutasLimpias}`);
+
