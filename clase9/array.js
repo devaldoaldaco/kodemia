@@ -455,3 +455,4 @@ let frutasLimpias = frutas.filter((fruta) => {
 
 console.log(`Ahi esta la canasta jefa: ${frutasLimpias}`);
 
+
