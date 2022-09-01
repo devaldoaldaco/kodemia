@@ -85,3 +85,33 @@ generarTarjetaDeCredito('bbva', '4561 1234 1234 1234', 'Clasica MC');
 // }
 
 // let htmlString = `<h1>${titulo}</h1>`;
+const primerTarjeta = document.querySelector('#bbva');
+console.log(primerTarjeta.innerHTML);
+//body.innerHTML += '<h1>Esto es el contenido del body</h1>';
+body.innerHTML += `<h1></h1>`;
+
+
+// function HTMLElement() {
+//   this.style = {};
+//   this.innerText = '';
+//   this.className = '';
+//   this.classList = {
+//     classes: [],
+//     add: function(className) {
+//       this.classes.push(className);
+//     }
+//   };
+// }
+
+
+// function HTMLDivElement extends HTMLElement {
+//   this.style = {};
+//   this.innerText = '';
+//   this.className = '';
+//   this.classList = {
+//     classes: [],
+//     add: function(className) {
+//       this.classes.push(className);
+//     }
+//   };
+// }
