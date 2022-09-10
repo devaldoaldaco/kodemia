@@ -38,7 +38,8 @@ Definición: Conversion de un tipo de dato a otro
 
 <h2>Funciones</h2>
 
-Definición: es un bloque de código que realiza alguna operación
+Definición: es un bloque de código que realiza alguna operación encapsulada entre llaves {}
+
 ```js
 // Declaración de una función
 
@@ -127,33 +128,29 @@ Definicion: un metodo es una funcion que pertenece al prototipo de un objeto
 <h2>this</h2>
 
 ```js
-    (function() {
+    this.b="otra cosa";
+    this.a="una cosa"
 
-        this.b="otra cosa";
-        this.a="una cosa"
+    function MiClase() {
+    this.a="hola";
+    this.b="adios";
+    }
 
-        function MiClase() {
-        this.a="hola";
-        this.b="adios";
-        }
+    let obj= new MiClase();
+    let getA=function () {
+    return this.a;
+    };
 
-        let obj= new MiClase();
-        let getA=function () {
-        return this.a;
-        };
+    obj.getA=getA;
 
-        obj.getA=getA;
+    let getB=() => this.b;
+    obj.getB=getB;
 
-        let getB=() => this.b;
-        obj.getB=getB;
+    console.log(getA());
+    console.log(getB());
 
-        console.log(getA());
-        console.log(getB());
-
-        console.log(obj.getA());
-        console.log(obj.getB());
-
-    })();
+    console.log(obj.getA());
+    console.log(obj.getB());
 ```
 
 <h2>Parsear datos(transformando datos)</h2>
@@ -252,3 +249,7 @@ Definición: Forma mas simple de escribir JS
     }
 
 ``` 
+
+NOTAS: 
+
+Favor de hacer sus comentarios

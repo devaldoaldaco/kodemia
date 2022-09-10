@@ -71,8 +71,7 @@ Object.prototype.toString = () => {
     console.log(this.nombre);
 }
 person.toString()
-VM1830:2 aldo
-undefined
+
 Object.prototype.toString = () => {
     console.log(this.nombre);
 }
@@ -80,6 +79,3 @@ Object.prototype.toString = () => {
     console.log(this.nombre);
 }
 Object.prototype.nombre
-undefined
-3VM2917:2 undefined
-nombre
