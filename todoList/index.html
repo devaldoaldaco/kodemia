@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #login {
+            display: block;
+        }
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input {
+            margin: 1rem;
+        }
+        button {
+            width: 100px;
+            margin: 0 auto;
+        }
+        #list {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <section id="login">
+        <h1>Iniciar sesion</h1>
+        <form>
+            <input type="email">
+            <input type="password">
+            <button>Login</button>
+        </form>
+    </section>
+    <section id="list">
+        <ul>
+            <li>Tarea 1</li>
+            <li>Tarea 2</li>
+        </ul>
+        <input type="text"> <button>Agregar tarea</button>
+    </section>
+    
+    <script src="./index.js"></script>
+</body>
+</html>
