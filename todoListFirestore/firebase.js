@@ -18,11 +18,15 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore();
 
-// Funcion que me ayudara a guardar 
-export const saveTask = (titulo, descripcion) => {
+/**
+ * Funcion que me ayudara a guardar objetos de tipo task dentro de la canasta tasks
+ * @param titulo {string}
+ * @param descripcion {string}
+ * */
+export const saveTask = (task) => {
     const objetoAGuardar = {
-        title: titulo,
-        description: descripcion
+        title: task.title,
+        description: task.description
     };
     const canasta = collection(db, "tasks");
     addDoc(canasta, objetoAGuardar);
