@@ -24,28 +24,20 @@
             width: 100px;
             margin: 0 auto;
         }
-        #list {
-            display: none;
-        }
+        
     </style>
 </head>
 <body>
-    <section id="login">
-        <h1>Iniciar sesion</h1>
+    <section id="list">
+        <h1>Tarea nueva</h1>
         <form>
-            <input type="email">
-            <input type="password">
-            <button>Login</button>
+            <label for="title">Titulo</label>
+            <input id="title" type="text">
+            <label for="description">Descripcion</label>
+            <input id="description" type="text">
+            <button>Agregar tarea</button>
         </form>
     </section>
-    <section id="list">
-        <ul>
-            <li>Tarea 1</li>
-            <li>Tarea 2</li>
-            <li>Tarea 2</li>
-        </ul>
-    </section>
-    
-    <script src="./index.js"></script>
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
