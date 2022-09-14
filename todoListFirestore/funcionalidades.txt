@@ -1,0 +1,8 @@
+Funcionalidades principales 
+	Registrar(email, nombre usuario, password)
+	Dar de baja 
+	Actualizar la información del usuario
+	Loggear
+	Crear post	Actualizar post
+	Delete post
+	Comentar post
