@@ -1,6 +1,6 @@
 // conection to firebase
-import { saveTask } from './firebase.js';
-import { Task } from './classes.js';
+import { saveTask } from './connection/firebase.js';
+import { Task } from './classes/Task.js';
 
 
 // Obetener los datos de mi interfaz
