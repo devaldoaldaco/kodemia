@@ -1,4 +1,4 @@
-import { getFirestore, addDoc, deleteDoc, updateDoc, getDoc, collection } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
+import { getFirestore, addDoc, deleteDoc, updateDoc, getDoc, collection, onSnapshot, doc } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-firestore.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.2/firebase-app.js";
 
 const firebaseConfig = {
@@ -19,7 +19,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore();
 
 /**
- * Funcion que me ayudara a guardar objetos de tipo task dentro de la canasta tasks
+ * @description Funcion que me ayudara a guardar objetos de tipo task dentro de la canasta tasks
  * @param titulo {string}
  * @param descripcion {string}
  * */
@@ -31,3 +31,27 @@ export const saveTask = (task) => {
     const canasta = collection(db, "tasks");
     addDoc(canasta, objetoAGuardar);
 };
+
+/**
+ * @description Funcion que me ayudara a obtener la coleccion de las tareas
+ * @param callback {funtion}
+ * */
+export const getTasks = (callback) => {
+    //const tasksCollection = collection(db, 'tasks').orderBy("title", "asc");
+    const tasksCollection = collection(db, 'tasks');
+    // [{}, {}, {}, {}]
+    onSnapshot(tasksCollection, callback);
+};
+
+/**
+ * @description Funcion que me ayudara a eliminar una tarea de la coleccion
+ * @param id {string}
+ * */
+export const deleteTask = (id) => {
+    const array = id.split('deleteButton');
+    const cleanId = array[1];
+    deleteDoc(doc(db, 'tasks', cleanId));
+};
+
+
+
